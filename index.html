@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        
+        body{
+          background-color: #383636;
+        }
+
+        .container{
+            width: 100%; 
+            max-width: 280px;
+            margin: 50px;
+            padding: 30px;
+            border-radius: 7px;
+            box-shadow: 0 0 5px #100b0b;
+            background-color: white;
+            display: grid;
+            align-content: none;
+        }
+
+       .custom{
+        display: flex;
+        justify-content: center;
+       }
+
+        
+
+    </style>
+    <script>
+        function calculate(){
+            var num1 = parseFloat(document.getElementById("num1").value);
+            var num2 = parseFloat(document.getElementById("num2").value);
+
+            var operotor = document.getElementById("operotor").value;
+
+            var result;
+
+            if(operotor === "+")
+            {
+                result= num1 + num2;
+            }
+            else if(operotor === "-")
+            {
+                result= num1 - num2;
+            }
+            else if(operotor === "*")
+            {
+                result= num1 * num2;
+            }
+            else if(operotor === "/"){
+                result= num1 * num2;
+            }
+            document.getElementById("result").value = result;
+
+        }
+    </script>
+
+</head>
+<body>
+    
+   <div class="custom">
+    <div class="container">
+    <h2 align="center">Calculator</h2>
+    <label class="custom" for="number1">Number1</label>
+    <input type="number" id="num1"><br>
+    <label class="custom" for="number2">Number</label>
+    <input type="number" id="num2">
+    <br>
+
+    <label class="custom" for="operotor">Operotor</label>
+    <select id="operotor">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="/">/</option>
+    </select>
+
+    <br>
+
+    <button class="custom" onclick="calculate()">Calculate</button>
+    <br>
+    <label class="custom" for="result">Result</label>
+    <input type="number" id="result">
+   </div>
+</div>
+</body>
+</html>
